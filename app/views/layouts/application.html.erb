@@ -5,47 +5,37 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-
 </head>
 <body>
 
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<% if notice %>
+    <script type="text/javascript">
+        noty({text: '<%= notice %>', type: 'alert'});
+    </script>
+
+<% end %>
 
 
-      <!--<header>-->
-      <!--<div class="logoPro"><img src="logo.png"></div>-->
-      <!--<div><ul>-->
-        <!--<li><% unless user_signed_in? %></li>-->
-      <!--<li><%= link_to 'SignIn',new_user_session_path %></li>-->
-      <!--<li><%= link_to 'SignUp',new_user_registration_path %></li>-->
-      <!--<% else %>-->
-      <!--<%= @current_user_username %>-->
-      <!--<% end %>-->
-    <!--</ul></div>-->
-      <!--</header>-->
-<nav class="red" role="navigation">
-  <div class="nav-wrapper container">
-    <a id="logo-container" href="/" class="brand-logo"><%= image_tag 'logo.png' %></a>
-    <ul class="right hide-on-med-and-down">
-      <li><% unless user_signed_in? %></li>
-            <li><%= link_to 'SignIn',new_user_session_path %></li>
-            <li><%= link_to 'SignUp',new_user_registration_path %></li>
-        <% else %>
-            <%= @current_user_username %>
-        <% end %>
-    </ul>
+<% if alert %>
 
-    <ul id="nav-mobile" class="side-nav">
-      <li><a href="#">Navbar Link</a></li>
-    </ul>
-    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-  </div>
-</nav>
+    <script type="text/javascript">
+        noty({text: '<%= alert %>', type: 'error'});
+    </script>
+<% end %>
+
+
+<header>
+  <div class="logo"><a href="/"> <%= image_tag src="logo.png" %></a> </div>
+      <nav><ul>
+        <li><% unless user_signed_in? %></li>
+      <li><%= link_to 'SignIn',new_user_session_path %></li>
+      <li><%= link_to 'SignUp',new_user_registration_path %></li>
+      <% else %>
+      <%= @current_user_username %>
+      <% end %>
+    </ul></nav>
+      </header>
+
 <%= yield %>
 
 </body>

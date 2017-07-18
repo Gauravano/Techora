@@ -1,8 +1,44 @@
-<html>
-<head>
-  <title>Techora</title>
-</head>
-<body>
- 
-</body>
-</html>
+
+<main>
+
+
+  <aside>
+
+  </aside>
+
+  <section>
+
+    <div class="createQuestion">
+
+      <%= form_for @question, remote: true do |f| %>
+
+          <%= f.label :content %> <br>
+
+          <%= f.text_area :content %>  <br>
+          <div class="actions">
+            <%= f.submit  id: 'create_ques_submit' %>
+            <span id="characters">0</span>
+          </div>
+
+      <% end %>
+
+      <% if @question.errors.any? %>
+
+          <% @question.errors.full_messages.each do |message| %>
+
+
+
+
+
+          <% end %>
+
+      <% end %>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+
