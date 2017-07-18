@@ -1,0 +1,25 @@
+<div class="question">
+  <div class="left">
+    <div class="userImage">
+
+      <% if question.user.profile_picture %>
+          <img src="/uploads/<%=tweet.user.profile_picture %>">
+      <% end %>
+
+    </div>
+  </div>
+
+
+  <div class="right">
+    <div class="userDetail">
+      <%= question.user.email %>
+    </div>
+    <div class="content">
+      <%= question.content %>
+    </div>
+    <div class="actions">
+      <!--<%= link_to question.like_string(current_user.id), url_for(controller: 'likes', action: 'toggle_like', tweet_id: tweet.id), method: :post,id: "like_#{tweet.id}" ,remote: true %> , <%= tweet.likes.count %>-->
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,49 @@
+
+<main>
+
+
+  <aside>
+
+  </aside>
+
+  <section>
+
+    <div class="createQuestion">
+
+      <%= form_for @question, remote: true do |f| %>
+
+          <%= f.label :content %> <br>
+
+          <%= f.text_area :content %>  <br>
+          <div class="actions">
+            <%= f.submit  id: 'create_question_submit' %>
+            <span id="characters">0</span>
+          </div>
+
+      <% end %>
+
+      <% if @question.errors.any? %>
+
+          <% @question.errors.full_messages.each do |message| %>
+
+          <% end %>
+
+      <% end %>
+
+    </div>
+
+    <div id="questions">
+
+      <%  @feed.each do |question| %>
+
+          <%= render 'question', question: question %>
+      <% end %>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+
