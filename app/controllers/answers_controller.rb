@@ -9,9 +9,6 @@ class AnswersController < ApplicationController
 
   # GET /answers/1
   # GET /answers/1.json
-  def show
-  end
-
   # GET /answers/new
   def new
     @answer = Answer.new
@@ -28,7 +25,7 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.save
-        format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
+        format.html { redirect_to '/', notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else
         format.html { render :new }
