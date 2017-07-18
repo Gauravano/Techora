@@ -1,17 +1,16 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-header{
-	height: 60px;
-	display: flex;
-	justify-content:space-between;
-	background-color:blue;
-	align-items:center;
-	border-bottom:1px solid grey;
+// You can use Sass (SCSS) here: http://sass-lang.
 
-	div.logo{
-		img{
-			height:60px;
-		}
-	}
+
+div.nav-wrapper.container {
+
+  #logo-container {
+    margin-right: 20px;
+    height: 64px;
+
+    img {
+      height: 64px;
+    }
+  }
 }
