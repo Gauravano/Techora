@@ -15,7 +15,19 @@
 
 	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
+ 
+ <header>
+    <div class="logo"><img src=""></div>
+    <nav><ul>
+      <li><% unless user_signed_in? %></li>
+      <li><%= link_to 'SignIn',new_user_session_path %></li>
+      <li><%= link_to 'SignUp',new_user_registration_path %></li>
+      <% else %>
+      <%= @current_user_username %>
+      <% end %>
+    </ul>
+	</nav>
+  </header>
 
 <%= yield %>
 
