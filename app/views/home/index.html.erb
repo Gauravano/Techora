@@ -35,7 +35,16 @@
     </div>
 
 
+    <div id="questions">
 
+      <%  @feed.each do |question| %>
+
+          <%= render 'question', question: question %>
+      <% end %>
+
+
+
+    </div>
   </section>
 
 </main>
