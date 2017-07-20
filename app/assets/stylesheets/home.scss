@@ -41,5 +41,35 @@ main {
         padding-top: 4px;
       }
     }
+    div#questions{
+      div.question{
+        border: 1px solid black;
+        display: flex;
+        width: 90%;
+        padding: 6px;
+        div.left{
+          width: 50px;
+          div.userImage{
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: white;
+
+            img{
+              height: 40px;
+              width: 40px;
+              border-radius: 20px;
+            }
+          }
+
+
+        }
+        div.right{
+          flex-grow:1;
+        }
+      }
+
+
+    }
   }
 }

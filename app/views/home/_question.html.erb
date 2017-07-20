@@ -1,6 +1,12 @@
 <div class="question">
   <div class="left">
+    <div class="userImage">
 
+      <% if question.user.profile_picture %>
+          <img src="/uploads/<%= question.user.profile_picture %>">
+      <% end %>
+
+    </div>
   </div>
 
 
