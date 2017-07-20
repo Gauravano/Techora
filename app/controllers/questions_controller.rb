@@ -18,13 +18,31 @@ class QuestionsController < ApplicationController
   # GET /questions/1/edit
   # POST /questions
   # POST /questions.json
+  # def create
+  #   # if user_signed_in?
+  #   @question = Question.new(question_params)
+  #
+  #   respond_to do |format|
+  #     if @question.save
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @question.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  #   # else
+  #   #   before_filter :authenticate_user!
+  #   #  end
+  #
+  # end
   def create
     @question = Question.new(question_params)
-
+    @question.user_id = current_user.id
     respond_to do |format|
       if @question.save
+        format.html { redirect_to '/', notice: 'Question was successfully created.' }
+        format.json { render :show, status: :created, location: @question }
       else
-        format.html { render :new }
+        format.html { render 'home/index' }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end

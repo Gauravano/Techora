@@ -16,7 +16,9 @@
 
           <%= f.text_area :content %>  <br>
           <div class="actions">
+
             <%= f.submit  id: 'create_question_submit' %>
+
             <span id="characters">0</span>
           </div>
 
@@ -32,14 +34,7 @@
 
     </div>
 
-    <div id="questions">
 
-      <%  @feed.each do |question| %>
-
-          <%= render 'question', question: question %>
-      <% end %>
-
-    </div>
 
   </section>
 
