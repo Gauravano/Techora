@@ -10,7 +10,7 @@
 
     <div class="createQuestion">
 
-      <%= form_for @question, remote: true do |f| %>
+      <%= form_for @question do |f| %>
 
           <%= f.label :Ask_Question %> <br>
 
@@ -40,6 +40,29 @@
       <%  @feed.each do |question| %>
 
           <%= render 'question', question: question %>
+          <div class="createAnswer">
+
+            <%= form_for @answer do |f| %>
+
+                <%= f.label :Answer_this %> <br>
+
+                <%= f.text_area :ans %>  <br>
+                <div class="actions">
+
+                  <%= f.submit  id: 'create_answer_submit' %>
+                </div>
+
+            <% end %>
+
+            <% if @answer.errors.any? %>
+
+                <% @answer.errors.full_messages.each do |message| %>
+
+                <% end %>
+
+            <% end %>
+
+          </div>
       <% end %>
 
 
