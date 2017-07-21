@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
@@ -35,6 +36,7 @@ class QuestionsController < ApplicationController
   #
   # end
   def create
+
     @question = Question.new(question_params)
     @question.user_id = current_user.id
     respond_to do |format|
