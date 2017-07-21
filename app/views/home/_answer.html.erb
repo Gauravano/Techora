@@ -1,0 +1,25 @@
+<div class="answer">
+  <div class="left">
+    <div class="userImage">
+
+      <% if answer.user.profile_picture %>
+          <img src="/uploads/<%= answer.user.profile_picture %>">
+      <% end %>
+
+    </div>
+  </div>
+
+
+  <div class="right">
+    <div class="userDetail">
+      <%= answer.user.email %>
+    </div>
+    <div class="content">
+      <%= answer.ans %>
+    </div>
+    <!--<div class="actions">-->
+    <!--&lt;!&ndash;%&ndash;&gt;-->
+    <!--</div>-->
+  </div>
+</div>
+
