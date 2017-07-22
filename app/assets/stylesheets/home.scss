@@ -70,6 +70,37 @@ main {
         }
       }
 
+      div.answer{
+        margin-left: 20px;
+        background-color: bisque;
+        display: flex;
+        width: 70%;
+        padding: 16px;
+        div.left{
+          width: 50px;
+          div.userImage{
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: white;
+
+            img{
+              height: 40px;
+              width: 40px;
+              border-radius: 20px;
+            }
+          }
+
+
+        }
+        div.right{
+          div.userDetail{
+              color:blue;
+          }
+          flex-grow:1;
+        }
+      }
+
 
     }
   }
