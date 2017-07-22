@@ -5,10 +5,15 @@
 
 
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.label :UserName %><br />
+      <%= f.text_field :username, autofocus: true %>
     </div>
-    
+
+    <div class="field">
+      <%= f.label :DateOfBirth %><br />
+      <%= f.date_field :birthday, autofocus: true %>
+    </div>
+
     <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
