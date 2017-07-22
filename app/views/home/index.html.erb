@@ -10,7 +10,7 @@
 
     <div class="createQuestion">
 
-      <%= form_for @question do |f| %>
+      <%= form_for @question ,remote: true do |f| %>
 
           <%= f.label :Ask_Question %> <br>
 
@@ -42,11 +42,11 @@
           <%= render 'question', question: question %>
           <div class="createAnswer">
 
-            <%= form_for @answer do |f| %>
+            <%= form_for @answer  ,remote: true do |f| %>
 
                 <%= f.label :Answer_this %> <br>
 
-                <%= f.text_area :ans %>  <br>
+                <%= f.text_area :ans , :rows=>"2" , :cols=>"30", :onfocus =>"this.rows=4 , this.cols =70" , :placeholder =>" answer this question " %>  <br>
                 <div class="actions">
 
                   <%= f.submit  id: 'create_answer_submit' %>
@@ -64,8 +64,6 @@
 
           </div>
       <% end %>
-
-
 
     </div>
   </section>
