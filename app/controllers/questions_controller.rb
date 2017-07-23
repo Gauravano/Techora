@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:show, :update, :destroy,:edit]
 
   # GET /questions
   # GET /questions.json
@@ -14,6 +14,9 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+  end
+
+  def edit
   end
 
   # GET /questions/1/edit
@@ -50,6 +53,18 @@ if current_user.member?
     end
 end
   else
+  end
+
+  def update
+    respond_to do |format|
+      if @question.update(question_params)
+        format.html { redirect_to '/', notice: 'Question was successfully updated.' }
+        format.json { render :show, status: :ok, location: @question }
+      else
+        format.html { render :edit }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
 

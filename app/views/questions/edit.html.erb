@@ -1,6 +1,16 @@
 <h1>Editing Question</h1>
+<div class="createQuestion">
 
-<%= render 'form' %>
+  <%= form_for @question  do |f| %>
 
-<%= link_to 'Show', @question %> |
-<%= link_to 'Back', questions_path %>
+      <%= f.label :Ask_Question %> <br>
+
+      <%= f.text_area :content %>  <br>
+      <div class="actions">
+
+        <%= f.submit %>
+
+        <span id="characters">0</span>
+      </div>
+      </div>
+  <% end %>
