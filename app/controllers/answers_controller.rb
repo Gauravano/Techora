@@ -28,6 +28,7 @@ class AnswersController < ApplicationController
     @answer.question_id = params[:questid]
     respond_to do |format|
       if @answer.save
+        AnswerMailer.answer_email(@answer.question.user,@answer.user).deliver_now
         format.html { redirect_to '/', notice: 'Answer was successfully created.' }
         format.json { render :show, status: :created, location: @answer }
       else

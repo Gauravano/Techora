@@ -16,15 +16,15 @@ class AnswersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create answer" do
+  test "should create answer_mailer" do
     assert_difference('Answer.count') do
-      post :create, answer: { ans: @answer.ans, question_id: @answer.question_id, user_id: @answer.user_id }
+      post :create, answer_mailer: {ans: @answer.ans, question_id: @answer.question_id, user_id: @answer.user_id }
     end
 
-    assert_redirected_to answer_path(assigns(:answer))
+    assert_redirected_to answer_path(assigns(:answer_mailer))
   end
 
-  test "should show answer" do
+  test "should show answer_mailer" do
     get :show, id: @answer
     assert_response :success
   end
@@ -34,12 +34,12 @@ class AnswersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update answer" do
-    patch :update, id: @answer, answer: { ans: @answer.ans, question_id: @answer.question_id, user_id: @answer.user_id }
-    assert_redirected_to answer_path(assigns(:answer))
+  test "should update answer_mailer" do
+    patch :update, id: @answer, answer_mailer: {ans: @answer.ans, question_id: @answer.question_id, user_id: @answer.user_id }
+    assert_redirected_to answer_path(assigns(:answer_mailer))
   end
 
-  test "should destroy answer" do
+  test "should destroy answer_mailer" do
     assert_difference('Answer.count', -1) do
       delete :destroy, id: @answer
     end

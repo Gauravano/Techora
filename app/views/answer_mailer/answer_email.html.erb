@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Welcome to example.com,
+<% if @user.username != nil%>
+  <%= @user.username %>
+      <% else %>
+  <%= @user.email %>
+      <% end %>
+
+</h1>
+<p>
+  your username is: <%= @user.username %>.<br>
+</p>
+<p>
+  Your Question is answered by : <%= @answeredby.username %>.
+</p>
+<p>Thanks for joining us and have a great day!</p>
+</body>
+</html>
