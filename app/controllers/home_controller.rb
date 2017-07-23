@@ -11,4 +11,13 @@ class HomeController < ApplicationController
   def users
     @users = User.all
   end
+
+  def profile
+
+  end
+
+  def uploadImage
+
+  end
+
 end

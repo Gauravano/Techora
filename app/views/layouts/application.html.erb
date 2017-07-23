@@ -27,13 +27,16 @@
 <header>
   <div class="logo"><a href="/"> <%= image_tag src="logo.png" %></a> </div>
       <nav><ul>
+
         <li><% unless user_signed_in? %></li>
       <li><%= link_to 'SignIn',new_user_session_path %></li>
       <li><%= link_to 'SignUp',new_user_registration_path %></li>
       <% else %>
               <% if current_user.username!= nil %>
+                  <li> <%= link_to "Users", users_path %> </li>
                   <li>  <%= current_user.username %></li>
               <% else %>
+                  <li> <%= link_to "Users", users_path %> </li>
               <li>  <%= current_user.email %></li>
               <% end %>
               <li>  <%= link_to "Sign Out",destroy_user_session_path,method: :delete %></li>
