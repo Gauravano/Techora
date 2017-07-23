@@ -22,7 +22,7 @@ class AnswersController < ApplicationController
   # POST /answers.json
 
   def create
-
+  if current_user.member?
     @answer = Answer.new(answer_params)
     @answer.user_id = current_user.id
     @answer.question_id = params[:questid]
@@ -36,6 +36,9 @@ class AnswersController < ApplicationController
         format.json { render json: @answer.errors, status: :unprocessable_entity }
       end
     end
+  end
+  else
+
   end
 
   # PATCH/PUT /answers/1

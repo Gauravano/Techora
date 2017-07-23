@@ -36,7 +36,7 @@ class QuestionsController < ApplicationController
   #
   # end
   def create
-
+if current_user.member?
     @question = Question.new(question_params)
     @question.user_id = current_user.id
     respond_to do |format|
@@ -48,7 +48,10 @@ class QuestionsController < ApplicationController
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
+end
+  else
   end
+
 
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
