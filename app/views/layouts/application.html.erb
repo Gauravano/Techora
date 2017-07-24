@@ -34,7 +34,7 @@
       <% else %>
               <% if current_user.username!= nil %>
                   <li> <%= link_to "Users", users_path %> </li>
-                  <li>  <%= current_user.username %></li>
+                  <li>  <%= link_to current_user.username,controller: "home",action: "profile" %></li>
               <% else %>
                   <li> <%= link_to "Users", users_path %> </li>
               <li>  <%= current_user.email %></li>
