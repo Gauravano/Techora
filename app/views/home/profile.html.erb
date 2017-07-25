@@ -1,7 +1,32 @@
-<% if current_user.profile_picture %>
-    <img src="/uploads/<%= current_user.profile_picture %>" >
+<div class="main">
+  <div class="left">
+    <div class="image">
+      <% if current_user.profile_picture %>
+          <img src="/uploads/<%= current_user.profile_picture %>" >
+      <% else %>
+          <%= image_tag("/uploads/substitutionprofile.png") %>
+      <% end %>
+    </div>
+    <div class="feed">
+      <h3>Feed</h3>
+      <div class="information">
+        <h5> Questions:   <%= current_user.questions.count %></h5><br>
+        <h5> Answers:   <% @answerCount %></h5><br>
+        <h5> Questions:   <%= current_user.questions.count %></h5><br>
 
-<% end %>
+      </div>
+    </div>
+  </div>
+  <div class="center">
+    <div class="upper">
+      <div class="naming"></div>
+hello
+    </div>
+    <div class="lower"></div>
+  </div>
+  <div class="right"></div>
+
+</div>
 
 
 <%= form_tag url_for(controller: :home, action: :upload_image,method: :post), multipart: true do %>
@@ -12,3 +37,4 @@
     <%= submit_tag %>
 
 <% end %>
+

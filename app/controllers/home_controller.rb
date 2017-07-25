@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   end
 
   def profile
-
+    @answerCount = Answer.where(user_id: current_user.id).count
   end
 
   def upload_image
