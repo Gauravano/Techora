@@ -18,6 +18,7 @@
       <%= answer.ans %>
     </div>
     <%= link_to 'Edit',edit_answer_path(answer) %>
+    <%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %>
     <!--<div class="actions">-->
     <!--&lt;!&ndash;%&ndash;&gt;-->
     <!--</div>-->
