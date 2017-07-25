@@ -14,6 +14,10 @@ class HomeController < ApplicationController
 
   def profile
     @answerCount = Answer.where(user_id: current_user.id).count
+
+    if @answerCount.nil?
+      @answerCount = 1
+    end
   end
 
   def upload_image
