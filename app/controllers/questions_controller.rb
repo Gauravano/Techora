@@ -38,7 +38,9 @@ class QuestionsController < ApplicationController
   #   #  end
   #
   # end
+
   def create
+
 if current_user.member?
     @question = Question.new(question_params)
     @question.user_id = current_user.id
@@ -51,21 +53,33 @@ if current_user.member?
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
+else
+  respond_to do |format|
+    format.html { redirect_to '/',notice: 'You are not authorized to create question' }
+    format.json { render json: @question.errors, status: :unprocessable_entity }
+  end
 end
-  else
+
   end
 
   def update
-    respond_to do |format|
-      if @question.update(question_params)
-        format.html { redirect_to '/', notice: 'Question was successfully updated.' }
-        format.json { render :show, status: :ok, location: @question }
-      else
-        format.html { render :edit }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
+  if current_user.role == "admin" || current_user.id == @question.user_id
+      respond_to do |format|
+        if @question.update(question_params)
+          format.html { redirect_to '/', notice: 'Question was successfully updated.' }
+          format.json { render :show, status: :ok, location: @question }
+        else
+          format.html { render :edit }
+          format.json { render json: @question.errors, status: :unprocessable_entity }
+        end
       end
+  else
+    respond_to do |format|
+      format.html { redirect_to '/',notice: 'You are not authorized to update question' }
+      format.json { render json: @question.errors, status: :unprocessable_entity }
     end
   end
+end
 
 
   # PATCH/PUT /questions/1
@@ -74,11 +88,19 @@ end
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy
+    if current_user.role == "admin" || current_user.role=="editor" || current_user.id == @question.user_id
     @question.destroy
     respond_to do |format|
       format.html { redirect_to '/', notice: 'Question was successfully destroyed.' }
       format.json { head :no_content }
     end
+    else
+      respond_to do |format|
+        format.html { redirect_to '/',notice: 'You are not authorized to delete question' }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
+    end
+
   end
 
   private

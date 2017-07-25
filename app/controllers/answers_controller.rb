@@ -36,14 +36,20 @@ class AnswersController < ApplicationController
         format.json { render json: @answer.errors, status: :unprocessable_entity }
       end
     end
-  end
-  else
 
+  else
+    respond_to do |format|
+      format.html { redirect_to '/',notice: 'You are not authorized to answer questions' }
+      format.json { render json: @answer.errors, status: :unprocessable_entity }
+    end
+
+  end
   end
 
   # PATCH/PUT /answers/1
   # PATCH/PUT /answers/1.json
   def update
+    if current_user.role =="admin" || current_user.role =="editor" || current_user.id == @answer.user_id
     respond_to do |format|
       if @answer.update(answer_params)
         format.html { redirect_to '/', notice: 'Answer was successfully updated.' }
@@ -53,16 +59,32 @@ class AnswersController < ApplicationController
         format.json { render json: @answer.errors, status: :unprocessable_entity }
       end
     end
+    else
+      respond_to do |format|
+        format.html { redirect_to '/',notice: 'You are not authorized to update answer' }
+        format.json { render json: @answer.errors, status: :unprocessable_entity }
+      end
+
+    end
   end
+
 
   # DELETE /answers/1
   # DELETE /answers/1.json
   def destroy
+    if current_user.role == "admin" ||current_user.role=="editor" ||current_user.id == @answer.id
     @answer.destroy
     respond_to do |format|
       format.html { redirect_to '/', notice: 'Answer was successfully destroyed.' }
       format.json { head :no_content }
     end
+    else
+      respond_to do |format|
+        format.html { redirect_to '/',notice: 'You are not authorized to delete answer' }
+        format.json { render json: @answer.errors, status: :unprocessable_entity }
+      end
+    end
+
   end
 
   private
