@@ -1,6 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :set_answer, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_answer, only: [:show, :edit, :update, :destroy,:upvotes]
   # GET /answers
   # GET /answers.json
   def index
@@ -16,6 +15,19 @@ class AnswersController < ApplicationController
 
   # GET /answers/1/edit
   def edit
+  end
+
+  def upvotes
+    if ((current_user.role == "member") && (Answerupvote.isupvoted @answer ,current_user))
+    @upvote = Answerupvote.new
+    @upvote.answer_id = @answer.id
+    @upvote.user_id = current_user.id
+    @upvote.save!
+    redirect_to '/',notice: 'Answer is successfully upvoted'
+    else
+      redirect_to '/',notice: 'You are not authorized to upvote Answers'
+    end
+
   end
 
   # POST /answers

@@ -21,6 +21,8 @@
 
     <%= link_to 'Edit',edit_answer_path(answer) %>
     <%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Upvote',{:controller => 'answers',:action => 'upvotes',id:answer},method: :post %>
+
   </div>
 
 </div>

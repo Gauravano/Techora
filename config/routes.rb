@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :answers
   resources :questions
   get 'home/index'
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   get '/users' => 'home#users'
   get 'home/profile' => 'home#profile'
   post 'home/upload_image'
+  post 'upvotes'=>"answers#upvotes"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
