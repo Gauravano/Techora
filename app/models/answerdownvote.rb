@@ -11,5 +11,5 @@ class Answerdownvote < ActiveRecord::Base
     end
 
   end
-  
+
 end
