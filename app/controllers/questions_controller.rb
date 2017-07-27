@@ -48,6 +48,7 @@ if current_user.member?
       if @question.save
         format.html { redirect_to '/', notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
+        format.js{ @answer = Answer.new }
       else
         format.html { render 'home/index' }
         format.json { render json: @question.errors, status: :unprocessable_entity }

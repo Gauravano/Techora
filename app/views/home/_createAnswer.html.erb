@@ -1,0 +1,19 @@
+<%= form_for @answer  ,remote: true do |f| %>
+    <%= f.label :Answer_this %> <br>
+
+    <%= f.text_area :ans , :rows=>"2" , :cols=>"30", :onfocus =>"this.rows=4 , this.cols =70" , :placeholder =>" answer_mailer this question " %>  <br>
+    <%= hidden_field_tag :questid, question.id %>
+    <div class="actions">
+
+      <%= f.submit  id: 'create_answer_submit' %>
+    </div>
+
+<% end %>
+
+<% if @answer.errors.any? %>
+
+    <% @answer.errors.full_messages.each do |message| %>
+
+    <% end %>
+
+<% end %>
