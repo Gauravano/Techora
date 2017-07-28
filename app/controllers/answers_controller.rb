@@ -18,22 +18,29 @@ class AnswersController < ApplicationController
   end
 
   def upvote
+
+    flag = false
     @answerup = Answer.find(params[:answer_id])
-    byebug
     if ((current_user.role == "member") && (Answerupvote.isupvoted @answerup ,current_user))
     @upvote = Answerupvote.new
     @upvote.answer_id = @answerup.id
     @upvote.user_id = current_user.id
     @upvote.save
-    redirect_to '/',notice: 'Answer is successfully upvoted'
-    respond_to do |format|
-      format.js {}
-    end
-    else
-      redirect_to '/',notice: 'You are not authorized to upvote Answers'
+      flag = true
+
     end
 
+  respond_to do |format|
+    # format.html{
+    #   redirect_to '/',notice: 'Answer is successfully upvoted'
+    # }
+    format.js {
+      @count = @answerup.answerupvotes.length
+      @check = flag
+    }
   end
+end
+
 
   def downvote
     if ((current_user.role == "member") && (Answerdownvote.isdownvoted @answer ,current_user))

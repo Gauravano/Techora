@@ -1,0 +1,9 @@
+
+$('#upvote_<%= @answerup.id%>').html("<%= @count %>");
+
+<% if @check == true %>
+noty({text: 'Answer was Upvoted', type: 'alert'});
+<% else %>
+noty({text: 'You are not authorized to upvote ', type: 'notice'});
+<% end %>
+

@@ -18,10 +18,11 @@
     <div class="content">
       <%= answer.ans %>
     </div>
+    <% div_id = "upvote_#{answer.id}" -%>
 
     <%= link_to 'Edit',edit_answer_path(answer) %>
     <%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to 'Upvote',url_for(controller: 'answers', action: 'upvote', answer_id: answer.id), method: :post,id: "upvote`_#{answer.id}" %>  <%= answer.answerupvotes.length %>
+    <%= link_to 'Upvote',url_for(controller: 'answers', action: 'upvote', answer_id: answer.id), method: :post,id: "upvote`_#{answer.id}",remote: true %> <div id="<%= div_id %>" > <%= answer.answerupvotes.length %></div>
     <%= link_to 'Downvote',{:controller => 'answers',:action => 'downvote',id:answer},method: :post %>  <%= answer.answerdownvotes.length %>
   </div>
 
