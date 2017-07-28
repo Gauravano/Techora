@@ -1,0 +1,9 @@
+
+$('#downvote_<%= @answerdown.id%>').html("<%= @count %>");
+
+<% if @check == true %>
+noty({text: 'Answer was dowvoted', type: 'alert'});
+<% else %>
+noty({text: 'You are not authorized to downvote ', type: 'notice'});
+<% end %>
+

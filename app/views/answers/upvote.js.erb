@@ -1,5 +1,5 @@
 
-$('#upvote_<%= @answerup.id%>').html("<%= @count %>");
+$('#upvote_<%= @answerup.id%>').html("<%= @answerup.answerupvotes.length %>");
 
 <% if @check == true %>
 noty({text: 'Answer was Upvoted', type: 'alert'});

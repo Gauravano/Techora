@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :set_answer, only: [:show, :edit, :update, :destroy,:downvote]
+  before_action :set_answer, only: [:show, :edit, :update, :destroy]
   # GET /answers
   # GET /answers.json
   def index
@@ -42,17 +42,41 @@ class AnswersController < ApplicationController
 end
 
 
+  # def downvote
+  #   if ((current_user.role == "member") && (Answerdownvote.isdownvoted @answer ,current_user))
+  #     @downvote = Answerdownvote.new
+  #     @downvote.answer_id = @answer.id
+  #     @downvote.user_id = current_user.id
+  #     @downvote.save!
+  #     redirect_to '/',notice: 'Answer is successfully voted down'
+  #   else
+  #     redirect_to '/',notice: 'You are not authorized to downvote Answers'
+  #   end
+  #
+  # end
+
   def downvote
-    if ((current_user.role == "member") && (Answerdownvote.isdownvoted @answer ,current_user))
+
+    flag = false
+    @answerdown = Answer.find(params[:answer_id])
+    if ((current_user.role == "member") && (Answerdownvote.isdownvoted @answerdown ,current_user))
       @downvote = Answerdownvote.new
-      @downvote.answer_id = @answer.id
+      @downvote.answer_id = @answerdown.id
       @downvote.user_id = current_user.id
-      @downvote.save!
-      redirect_to '/',notice: 'Answer is successfully voted down'
-    else
-      redirect_to '/',notice: 'You are not authorized to downvote Answers'
+      @downvote.save
+      flag = true
+
     end
 
+    respond_to do |format|
+      # format.html{
+      #   redirect_to '/',notice: 'Answer is successfully upvoted'
+      # }
+      format.js {
+        @count = @answerdown.answerdownvotes.length
+        @check = flag
+      }
+    end
   end
 
   # POST /answers
