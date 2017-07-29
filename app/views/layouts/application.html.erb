@@ -29,17 +29,17 @@
       <nav><ul>
 
         <li><% unless user_signed_in? %></li>
-      <li><%= link_to 'SignIn',new_user_session_path %></li>
-      <li><%= link_to 'SignUp',new_user_registration_path %></li>
+      <li><%= link_to 'SignIn',new_user_session_path,:class => 'link' %></li>
+      <li><%= link_to 'SignUp',new_user_registration_path,:class => 'link' %></li>
       <% else %>
               <% if current_user.username!= nil %>
-                  <li> <%= link_to "Users", users_path %> </li>
+                  <li> <%= link_to "Users", users_path,:class => 'link' %> </li>
                   <li>  <%= link_to current_user.username,controller: "home",action: "profile" %></li>
               <% else %>
-                  <li> <%= link_to "Users", users_path %> </li>
-                  <li>  <%= link_to current_user.email,controller: "home",action: "profile" %></li>
+                  <li> <%= link_to "Users", users_path,:class => 'link' %> </li>
+                  <li>  <%= link_to current_user.email,controller: "home",action: "profile",:class => 'link' %></li>
               <% end %>
-              <li>  <%= link_to "Sign Out",destroy_user_session_path,method: :delete %></li>
+              <li>  <%= link_to "Sign Out",destroy_user_session_path,method: :delete,:class => 'link' %></li>
           <% end %>
     </ul></nav>
       </header>

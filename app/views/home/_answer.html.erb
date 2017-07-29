@@ -2,10 +2,10 @@
   <div class="left">
     <div class="userImage">
 
+
       <% if answer.user.profile_picture %>
           <img src="/uploads/<%= answer.user.profile_picture %>">
       <% end %>
-
     </div>
   </div>
 
@@ -20,7 +20,7 @@
     </div>
     <% div_idup = "upvote_#{answer.id}" -%>
     <% div_iddown = "downvote_#{answer.id}" -%>
-    
+
   <div class="right-actions">
     <div><%= link_to 'Edit',edit_answer_path(answer) %></div>
     <div><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></div>

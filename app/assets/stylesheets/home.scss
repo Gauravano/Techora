@@ -1,7 +1,12 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.
-
+//a{
+//  text-decoration: none;
+//  a.link{
+//    text-decoration: none;
+//  }
+//}
 
 header {
   height: 70px;
@@ -17,11 +22,28 @@ header {
   }
 
   nav {
+
     ul {
       display: flex;
       li {
         list-style: none;
         margin-right: 10px;
+
+        .link {
+          background-color: white; /* Green */
+          border: none;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          cursor: pointer;
+          float: left;
+        }
+        .link:hover {
+          background-color:bisque;
+        }
       }
     }
   }
