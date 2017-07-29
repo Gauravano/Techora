@@ -98,6 +98,14 @@ main {
               color:blue;
           }
           flex-grow:1;
+
+          div.right-actions{
+            display: flex;
+            div{
+              padding-right: 10px;
+            }
+
+          }
         }
       }
 
