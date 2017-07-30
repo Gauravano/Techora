@@ -14,7 +14,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  border-bottom: 1px grey;
+  border-bottom: 1px solid grey;
   div.logo {
     img {
       height: 70px;
@@ -70,6 +70,7 @@ header {
 main {
   display: flex;
   background-color: #fafafa;
+  padding-top: 10px;
   aside {
     width: 250px;
   }
@@ -81,7 +82,33 @@ main {
         width: 90%;
         padding-left: 4px;
         padding-top: 4px;
+        height: 50px;
       }
+      textarea:hover {
+        width: 90%;
+        height: 70px;
+        padding-left: 4px;
+        padding-top: 4px;
+        border-radius: 5px;
+      }
+      textarea:focus {
+        width: 90%;
+        height: 70px;
+        padding-left: 4px;
+        padding-top: 4px;
+        border-radius: 5px;
+      }
+
+      textarea::placeholder {
+          image:url(http://lorempixel.com/400/200)
+      }
+
+      textarea:placeholder-shown {
+
+        //background-image:url(https://cdn4.iconfinder.com/data/icons/round-mobile-ui-set/512/letter-message-email-mail-20.png)
+
+      }
+
     }
     div#questions{
       div.question{
@@ -150,7 +177,27 @@ main {
         }
       }
 
+    div.createAnswer {
+      textarea {
+        width: 400px;
+        height: 50px;
+      }
 
+      textarea:focus {
+        width: 600px;
+        height: 70px;
+      }
+      textarea:hover {
+        width: 600px;
+        height: 70px;
+      }
+
+      textarea::placeholder {
+
+      }
+
+
+    }
     }
   }
 }
