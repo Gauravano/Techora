@@ -14,7 +14,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px grey;
   div.logo {
     img {
       height: 70px;
@@ -29,11 +29,30 @@ header {
         list-style: none;
         margin-right: 10px;
 
+        div.pic_user {
+
+          display: flex;
+          justify-content: space-around;
+        div.userImage {
+          width: 70px;
+          height: 70px;
+          border-radius: 35px;
+          background-color: white;
+
+          img {
+            height: 70px;
+            width: 70px;
+            border-radius: 35px;
+          }
+        }
+
+      }
+
         .link {
           background-color: white; /* Green */
           border: none;
           color: black;
-          padding: 15px 32px;
+          padding: 24px 32px;
           text-align: center;
           text-decoration: none;
           display: inline-block;

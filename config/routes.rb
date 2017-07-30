@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/' => 'home#index'
   get 'questions/edit' => 'questions#edit'
   get '/users' => 'home#users'
-  get 'home/profile' => 'home#profile'
+  get 'home/profile' => 'home#profile' ,as:'user_profile'
   post 'home/upload_image'
   post 'upvote'=>"answers#upvote"
   post 'downvote'=>"answers#downvote"

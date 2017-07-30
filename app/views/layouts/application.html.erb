@@ -33,12 +33,32 @@
       <li><%= link_to 'SignUp',new_user_registration_path,:class => 'link' %></li>
       <% else %>
               <% if current_user.username!= nil %>
-                  <li> <%= link_to "Users", users_path,:class => 'link' %> </li>
-                  <li>  <%= link_to current_user.username,controller: "home",action: "profile" %></li>
+
+                  <li><div class="pic_user">
+                    <div class="userImage">
+                    <% if current_user.profile_picture %>
+                        <img src="/uploads/<%= current_user.profile_picture %>" >
+                    <% else %>
+                        <%= image_tag("/uploads/substitutionprofile.png") %>
+                    <% end %>
+                  </div>
+                    <div><%= link_to current_user.username,user_profile_path,:class => 'link' %></div></div></li>
+
               <% else %>
                   <li> <%= link_to "Users", users_path,:class => 'link' %> </li>
-                  <li>  <%= link_to current_user.email,controller: "home",action: "profile",:class => 'link' %></li>
+                  <li> <div class="pic_user">
+                    <div class="userImage">
+                      <% if current_user.profile_picture %>
+                          <img src="/uploads/<%= current_user.profile_picture %>" >
+                      <% else %>
+                          <%= image_tag("/uploads/substitutionprofile.png") %>
+                      <% end %>
+                    </div>
+                       <div><%= link_to current_user.email,user_profile_path,:class => 'link' %>  </div>
+                    </div>
+                  </li>
               <% end %>
+              <li> <%= link_to "Users", users_path,:class => 'link' %> </li>
               <li>  <%= link_to "Sign Out",destroy_user_session_path,method: :delete,:class => 'link' %></li>
           <% end %>
     </ul></nav>
