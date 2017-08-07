@@ -15,6 +15,9 @@
           <%= f.label :Ask_Question %> <br>
 
           <%= f.text_area :content, :placeholder =>" Type your question here " %>  <br>
+
+          <%= f.check_box :anonymous %> <%= f.label :Ask_anonymously %><br>
+
           <div class="actions">
 
             <%= f.submit  id: 'create_question_submit' %>

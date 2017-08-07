@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726073857) do
+ActiveRecord::Schema.define(version: 20170807152430) do
 
   create_table "answerdownvotes", force: :cascade do |t|
     t.integer  "user_id"
@@ -49,8 +49,9 @@ ActiveRecord::Schema.define(version: 20170726073857) do
   create_table "questions", force: :cascade do |t|
     t.string   "content"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "anonymous",  default: false
   end
 
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"

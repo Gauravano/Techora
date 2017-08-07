@@ -2,7 +2,7 @@
   <div class="left">
     <div class="userImage">
 
-      <% if question.user.profile_picture %>
+      <% if question.user.profile_picture && question.anonymous== false %>
           <img src="/uploads/<%= question.user.profile_picture %>">
       <% end %>
 
@@ -12,7 +12,11 @@
 
   <div class="right">
     <div class="userDetail">
+      <% if question.anonymous == false %>
       <%= question.user.email %>
+          <% else %>
+      Anonymous
+          <% end %>
     </div>
     <div class="content">
       <%= question.content %>
