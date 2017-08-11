@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   	@user = User.new
     @question = Question.new
     @answer = Answer.new
-    @feed = Question.all.order(created_at: :desc)
+    @feed = Question.paginate(:page => params[:page],:per_page => 10)
 
   end
 
