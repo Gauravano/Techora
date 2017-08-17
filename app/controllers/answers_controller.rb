@@ -133,7 +133,7 @@ end
   # DELETE /answers/1
   # DELETE /answers/1.json
   def destroy
-    if current_user.role == "admin" ||current_user.role=="editor" ||current_user.id == @answer.id
+    if current_user.role == "admin" ||current_user.role=="editor" ||current_user.id == @answer.user.id
     @answer.destroy
     respond_to do |format|
       format.html { redirect_to '/', notice: 'Answer was successfully destroyed.' }
