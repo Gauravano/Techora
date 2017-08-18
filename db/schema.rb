@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811061836) do
+ActiveRecord::Schema.define(version: 20170818051808) do
 
   create_table "answerdownvotes", force: :cascade do |t|
     t.integer  "user_id"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20170811061836) do
     t.boolean  "anonymous"
     t.date     "birthday"
     t.integer  "role"
+    t.string   "access_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

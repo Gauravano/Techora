@@ -1,6 +1,5 @@
 class QuestionApiController < ApiController
-
-
+  
   def create
     if current_user.member?
       @question = Question.new
