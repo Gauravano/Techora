@@ -5,6 +5,7 @@ class Question < ActiveRecord::Base
   validates :user_id,presence: true
   has_paper_trail
 
+
   def listans question_id
     return Answer.where(question_id: question_id)
   end

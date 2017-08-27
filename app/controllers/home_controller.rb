@@ -4,8 +4,26 @@ class HomeController < ApplicationController
   	@user = User.new
     @question = Question.new
     @answer = Answer.new
-    @feed = Question.paginate(:page => params[:page],:per_page => 10)
+    @feed = Question.all
 
+  end
+
+  def follow
+    followee_id = params[:followee_id]
+    if current_user.can_follow followee_id
+      FollowMapping.create(:followee_id => followee_id, :follower_id => current_user.id)
+    else
+    end
+    return redirect_to '/users'
+  end
+
+  def unfollow
+    followee_id = params[:followee_id]
+    if current_user.can_unfollow followee_id
+      FollowMapping.where(:followee_id => followee_id, :follower_id => current_user.id).first.destroy
+    else
+    end
+    return redirect_to '/users'
   end
 
   def users

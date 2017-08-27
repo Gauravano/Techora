@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170818051808) do
+ActiveRecord::Schema.define(version: 20170827062020) do
 
   create_table "answerdownvotes", force: :cascade do |t|
     t.integer  "user_id"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 20170818051808) do
 
   add_index "answerupvotes", ["answer_id"], name: "index_answerupvotes_on_answer_id"
   add_index "answerupvotes", ["user_id"], name: "index_answerupvotes_on_user_id"
+
+  create_table "follow_mappings", force: :cascade do |t|
+    t.integer  "followee_id"
+    t.integer  "follower_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "questions", force: :cascade do |t|
     t.string   "content"

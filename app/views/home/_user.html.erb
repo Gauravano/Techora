@@ -1,5 +1,10 @@
 <div class="user">
-  <%= user.email %>
+  <%= user.email %><% if current_user.can_follow user.id %>
+      <%= link_to "Follow", url_for(controller: :home, action: :follow, followee_id: user.id), method: :post %>
+  <% end %>
 
+  <% if current_user.can_unfollow user.id %>
+      <%= link_to "UnFollow", url_for(controller: :home, action: :unfollow, followee_id: user.id), method: :post %>
+  <% end %>
 
 </div>
