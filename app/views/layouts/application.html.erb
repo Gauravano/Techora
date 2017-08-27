@@ -15,14 +15,12 @@
 
 <% end %>
 
-
 <% if alert %>
 
     <script type="text/javascript">
         noty({text: '<%= alert %>', type: 'error'});
     </script>
 <% end %>
-
 
 <header>
   <div class="logo"><a href="/"> <%= image_tag src="logo.png" %></a> </div>
@@ -54,7 +52,7 @@
                           <%= image_tag("/uploads/substitutionprofile.png") %>
                       <% end %>
                     </div>
-                    
+
                        <div><%= link_to current_user.email,user_profile_path,:class => 'link' %></div></div>
                   </li>
               <% end %>
@@ -67,5 +65,4 @@
 <%= yield %>
 
 </body>
-
 </html>

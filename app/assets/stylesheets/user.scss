@@ -1,0 +1,62 @@
+.users{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  .userList{
+
+    margin: 20px;
+    width: 208px;
+    height: 280px;
+    background-color: #ffffcc;
+
+    .userpic{
+      margin: 30px;
+      border-radius: 74px;
+      height: 138px;
+      width: 138px;
+      margin-bottom: 48px;
+      img{
+        border-radius: 74px;
+        height: 138px;
+        width: 138px;
+      }
+
+    }
+
+    .writeup{
+      text-align: center;
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      padding: 2px;
+      text-overflow:ellipsis;
+
+    }
+
+    .follbutton{
+
+      width: 100%;
+      align-self: center;
+
+      .link {
+        width: 100%;
+        border: solid 1px black;
+        color: grey;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        float: left;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
+      .link:hover {
+        background-color:greenyellow;
+      }
+      margin-bottom: 0px;
+    }
+  }
+}

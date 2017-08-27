@@ -1,10 +1,28 @@
-<div class="user">
-  <%= user.email %><% if current_user.can_follow user.id %>
-      <%= link_to "Follow", url_for(controller: :home, action: :follow, followee_id: user.id), method: :post %>
-  <% end %>
+<div class="userList">
+  <div class="userpic">
+    <% if user.profile_picture %>
+        <img src="/uploads/<%= user.profile_picture %>" >
+    <% else %>
+        <%= image_tag("/uploads/substitutionprofile.png") %>
+    <% end %>
+  </div>
+    <div class="writeup">
+      <% if user.username == "" %>
+        <%= user.email %>
 
-  <% if current_user.can_unfollow user.id %>
-      <%= link_to "UnFollow", url_for(controller: :home, action: :unfollow, followee_id: user.id), method: :post %>
-  <% end %>
+      <% else %>
+        <%= user.username %>
+      <% end %>
+    </div>
 
+    <div class="follbutton">
+
+          <% if current_user.can_follow user.id %>
+          <%= link_to "Follow", url_for(controller: :home, action: :follow, followee_id: user.id), method: :post,:class => 'link' %>
+      <% end %>
+
+      <% if current_user.can_unfollow user.id %>
+          <%= link_to "UnFollow", url_for(controller: :home, action: :unfollow, followee_id: user.id), method: :post,:class => 'link' %>
+      <% end %>
+    </div>
 </div>
