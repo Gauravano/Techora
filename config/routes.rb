@@ -2,17 +2,15 @@ Rails.application.routes.draw do
 
   resources :answers
   resources :questions
-  get 'home/index'
 
-  devise_for :users, controllers: {
-      registrations: 'registrations'
-  }
+  root 'home#index'
+
+
 
   # devise_for :users, except: :registrations
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-
-  get '/' => 'home#index'
   get 'questions/edit' => 'questions#edit'
   get '/users' => 'home#users'
   get 'home/profile' => 'home#profile' ,as:'user_profile'
@@ -21,6 +19,8 @@ Rails.application.routes.draw do
   post 'downvote'=>"answers#downvote"
   post '/follow' => 'home#follow'
   post '/unfollow' => 'home#unfollow'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
