@@ -1,16 +1,26 @@
 
 <main>
 
-
   <aside>
     <div id="myModal" class="modal">
 
       <!-- Modal content -->
       <div class="modal-content">
-        <span class="close">&times;</span>
-        <!--<p>Some text in the Modal..</p>-->
-        <h2>Sign up hey</h2>
 
+        <span class="close">&times;</span>
+
+        <!--<div class="leftlog">-->
+
+          <!---->
+        <!--</div>-->
+        <div class="right">
+        <header>
+          <h2 style="align-content: center; font-weight: 700">Sign Up</h2>
+        </header>
+
+        <!--<p>Some text in the Modal..</p>-->
+        <br><br>
+        <div class="form-sign">
         <%= form_for @user, :as => :user, :url => registration_path(@user) do |f| %>
 
 
@@ -39,14 +49,20 @@
 
             <div class="field">
               <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              <%= f.password_field :password_confirmation, autocomplete: "off",:class => "password_field" %>
             </div>
-
+              </div>
             <div class="actions">
-              <%= f.submit "Sign up" %>
+              <%= f.submit "Sign up", :class => 'submit' %>
             </div>
-        <% end %>
+            <%= link_to "Forgot your password?", new_password_path(@user) %><br />
 
+
+      <% end %>
+          <br><br>
+        <footer><h5>@copyright 2017,
+          <a  href="gauravano.github.io">Gaurav Sachdeva</a></h5></footer>
+        </div>
       </div>
 
     </div>
