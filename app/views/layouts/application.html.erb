@@ -29,7 +29,7 @@
 
         <% unless user_signed_in? %>
             <li><button id="signin" class="link"> SignIn</button></li>
-      <li><%= link_to 'SignUp',new_user_registration_path,:class => 'link',:id=> 'signup' %></li>
+            <li><button id="signup" class="link"> SignUp</button></li>
       <% else %>
 
               <% if current_user.username!= "" && current_user.username!=" " %>
