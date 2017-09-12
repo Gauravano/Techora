@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/users' => 'home#users'
   get 'home/profile' => 'home#profile' ,as:'user_profile'
   post 'home/upload_image'
+  post 'home/upload_coverpic'
   post 'upvote'=>"answers#upvote"
   post 'downvote'=>"answers#downvote"
   post '/follow' => 'home#follow'

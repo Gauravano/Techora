@@ -1,33 +1,98 @@
+.head{
+
+  width: 80%;
+
+.coverpic {
+
+  img {
+    height: 400px;
+    margin-left: 140px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0px 0px 2px white;
+    z-index: 0;
+  }
+
+#blah{
+  display: none;
+  position: absolute;
+  height: 400px;
+  margin-left: 140px;
+  width: 80%;
+  z-index: 10;
+  top: 70px;
+  box-shadow: 0 0px 0px 2px white;
+}
+
+}
+
+  #sub_button1{
+    display: none;
+  }
+
+  .profile_input1{
+    display: none;
+  }
+
+  .image{
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 0px 5px 8px black;
+    left: 180px;
+    top: 240px;
+    margin-bottom: 20px;
+    position: absolute;
+    z-index: 20;
+
+
+
+    img{
+      width: 250px;
+      height: 250px;
+
+    }
+
+    img:hover{
+      width: 250px;
+      height: 250px;
+      box-shadow: 0 0px 5px 8px black;
+
+    }
+
+
+
+  }
+
+  #blaaah{
+    display: none;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 0px 5px 8px black;
+    left: 180px;
+    top: 240px;
+    margin-bottom: 20px;
+    position: absolute;
+    z-index: 30;
+  }
+}
+
 .main {
   display: flex;
   flex: auto;
+  width: 80%;
 
   .left{
     flex-grow: 1;
-
-    .image{
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 1px solid black;
-      margin-left: 40px;
-      margin-top: 40px;
-      margin-bottom: 20px;
-
-      img{
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-      }
-    }
 
     .feed{
       margin: 20px;
       margin-left: 40px;
       border-top: 1px sandybrown;
+
       .information{
         margin: 10px;
       }
+
     }
   }
 
@@ -38,4 +103,11 @@
   .right{
     flex-grow: 1;
   }
+
+
+}
+
+.profile_input{
+  image:url("https://maxcdn.icons8.com/Share/icon/p1em/Photo_Video//camera1600.png");
+  style:none;
 }

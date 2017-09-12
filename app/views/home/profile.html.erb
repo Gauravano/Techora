@@ -1,12 +1,97 @@
+<div class="head">
+
+  <div class="coverpic" >
+
+    <% if current_user.coverpic %>
+      <img src="/uploads/<%= current_user.coverpic %>" >
+
+  <% else %>
+      <%= image_tag("/uploads/backgr2.jpg") %>
+
+  <% end %>
+
+    <img id="blah" src="#"  />
+
+  </div>
+
+  <%= form_tag url_for(controller: :home, action: :upload_coverpic,method: :post), multipart: true do %>
+
+      <input id="profile_input1" name="image" type="file"  />
+      <br>
+      <input type="submit" value="Save new Cover Image" id="sub_button1" >
+      <script>
+
+          function readURL(input) {
+              if (input.files && input.files[0]) {
+                  var reader = new FileReader();
+
+                  reader.onload = function (e) {
+                      $('#blah').attr('src', e.target.result);
+                  }
+
+                  reader.readAsDataURL(input.files[0]);
+              }
+          }
+
+          $("#profile_input1").change(function () {
+              readURL(this);
+
+              $('#blah').css('display', 'block');
+              $('#sub_button1').css('display', 'block');
+          });
+
+      </script>
+
+  <% end %>
+
+
+  <div class="image">
+    <% if current_user.profile_picture %>
+        <img src="/uploads/<%= current_user.profile_picture %>" >
+    <% else %>
+        <%= image_tag("/uploads/substitutionprofile.png") %>
+    <% end %>
+  </div>
+  <%= form_tag url_for(controller: :home, action: :upload_image,method: :post), multipart: true do %>
+      <input id="profile_input2" name="image" type="file"  />
+      <br>
+      <input type="submit" id="sub_button2">
+      <img id="blaaah" src="#"  />
+
+      <script>
+          function myfun() {
+              document.getElementById('profile_input2').click();
+          }
+
+          function readURL(input) {
+              if (input.files && input.files[0]) {
+                  var reader = new FileReader();
+
+                  reader.onload = function (e) {
+                      $('#blaaah').attr('src', e.target.result);
+                  }
+
+                  reader.readAsDataURL(input.files[0]);
+              }
+          }
+
+          $("#profile_input2").change(function () {
+              readURL(this);
+
+              $('#blaaah').css('display', 'block');
+              $('#sub_button2').css('display', 'block');
+          });
+
+      </script>
+  <% end %>
+
+  <button onclick="myfun()">Change profile</button>
+
+</div>
+
 <div class="main">
   <div class="left">
-    <div class="image">
-      <% if current_user.profile_picture %>
-          <img src="/uploads/<%= current_user.profile_picture %>" >
-      <% else %>
-          <%= image_tag("/uploads/substitutionprofile.png") %>
-      <% end %>
-    </div>
+
     <div class="feed">
       <h3>Feed</h3>
       <div class="information">
@@ -28,13 +113,4 @@
 
 </div>
 
-
-<%= form_tag url_for(controller: :home, action: :upload_image,method: :post), multipart: true do %>
-
-
-    <%= file_field_tag :image %>
-    <br>
-    <%= submit_tag %>
-
-<% end %>
 
