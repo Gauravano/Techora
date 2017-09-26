@@ -230,15 +230,15 @@ main {
         width: 90%;
         padding-left: 4px;
         padding-top: 4px;
-        height: 50px;
-      }
-      textarea:hover {
-        width: 90%;
         height: 70px;
-        padding-left: 4px;
-        padding-top: 4px;
-        border-radius: 5px;
       }
+      //textarea:hover {
+      //  width: 90%;
+      //  padding-left: 4px;
+      //  padding-top: 4px;
+      //  border-radius: 5px;
+      //}
+
       textarea:focus {
         width: 90%;
         height: 70px;
@@ -247,15 +247,15 @@ main {
         border-radius: 5px;
       }
 
-      textarea::placeholder {
-          image:url(http://lorempixel.com/400/200)
-      }
+      //textarea::placeholder {
+      //    image:url(http://lorempixel.com/400/200)
+      //}
 
-      textarea:placeholder-shown {
-
-        //background-image:url(https://cdn4.iconfinder.com/data/icons/round-mobile-ui-set/512/letter-message-email-mail-20.png)
-
-      }
+      //textarea:placeholder-shown {
+      //
+      //  //background-image:url(https://cdn4.iconfinder.com/data/icons/round-mobile-ui-set/512/letter-message-email-mail-20.png)
+      //
+      //}
 
     }
     div#questions{

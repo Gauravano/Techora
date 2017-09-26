@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   def feed
     users = followee_ids
     users << id
+    Question.where(user_id: users).order(created_at: :desc)
 
   end
 
@@ -32,7 +33,7 @@ class User < ActiveRecord::Base
   end
 
   def followee_ids
-    FollowMapping.where(followee_id: id).pluck(:followee_id)
+    FollowMapping.where(follower_id: id).pluck(:followee_id)
 
   end
 
@@ -53,4 +54,13 @@ class User < ActiveRecord::Base
     FOLLOWED = 1
     NOTFOLLOWED = 2
   end
+
+  def upvoteCount
+    Answerupvote.where(user_id: id).count
+  end
+
+  def downvoteCount
+    Answerdownvote.where(user_id: id).count
+  end
+
 end
