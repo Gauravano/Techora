@@ -109,7 +109,7 @@ GEM
     paper_trail (7.1.1)
       activerecord (>= 4.0, < 5.2)
       request_store (~> 1.1)
-    pg (0.21.0)
+    pg (0.20.0)
     rack (1.6.8)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -203,7 +203,7 @@ DEPENDENCIES
   materialize-sass
   omniauth-facebook
   paper_trail
-  pg
+  pg (~> 0.20.0)
   rails (= 4.2.8)
   rails-api
   sass-rails (~> 5.0)
