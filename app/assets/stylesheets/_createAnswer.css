@@ -1,0 +1,11 @@
+
+textarea {
+    width: 600px;
+    height: 70px;
+}
+
+textarea:focus {
+    width: 600px;
+    height: 70px;
+}
+

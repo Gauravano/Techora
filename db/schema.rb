@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20170912081935) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answerdownvotes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "answer_id"
@@ -20,8 +23,8 @@ ActiveRecord::Schema.define(version: 20170912081935) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "answerdownvotes", ["answer_id"], name: "index_answerdownvotes_on_answer_id"
-  add_index "answerdownvotes", ["user_id"], name: "index_answerdownvotes_on_user_id"
+  add_index "answerdownvotes", ["answer_id"], name: "index_answerdownvotes_on_answer_id", using: :btree
+  add_index "answerdownvotes", ["user_id"], name: "index_answerdownvotes_on_user_id", using: :btree
 
   create_table "answers", force: :cascade do |t|
     t.string   "ans"
@@ -33,8 +36,8 @@ ActiveRecord::Schema.define(version: 20170912081935) do
     t.integer  "downvotes",   default: 0
   end
 
-  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
-  add_index "answers", ["user_id"], name: "index_answers_on_user_id"
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
 
   create_table "answerupvotes", force: :cascade do |t|
     t.integer  "user_id"
@@ -43,8 +46,8 @@ ActiveRecord::Schema.define(version: 20170912081935) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "answerupvotes", ["answer_id"], name: "index_answerupvotes_on_answer_id"
-  add_index "answerupvotes", ["user_id"], name: "index_answerupvotes_on_user_id"
+  add_index "answerupvotes", ["answer_id"], name: "index_answerupvotes_on_answer_id", using: :btree
+  add_index "answerupvotes", ["user_id"], name: "index_answerupvotes_on_user_id", using: :btree
 
   create_table "follow_mappings", force: :cascade do |t|
     t.integer  "followee_id"
@@ -61,7 +64,7 @@ ActiveRecord::Schema.define(version: 20170912081935) do
     t.boolean  "anonymous",  default: false
   end
 
-  add_index "questions", ["user_id"], name: "index_questions_on_user_id"
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -93,18 +96,25 @@ ActiveRecord::Schema.define(version: 20170912081935) do
     t.string   "coverpic"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "versions", force: :cascade do |t|
-    t.string   "item_type",                     null: false
-    t.integer  "item_id",                       null: false
-    t.string   "event",                         null: false
+    t.string   "item_type",  null: false
+    t.integer  "item_id",    null: false
+    t.string   "event",      null: false
     t.string   "whodunnit"
-    t.text     "object",     limit: 1073741823
+    t.text     "object"
     t.datetime "created_at"
   end
 
-  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
+  add_foreign_key "answerdownvotes", "answers"
+  add_foreign_key "answerdownvotes", "users"
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "users"
+  add_foreign_key "answerupvotes", "answers"
+  add_foreign_key "answerupvotes", "users"
+  add_foreign_key "questions", "users"
 end
