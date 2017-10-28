@@ -1,117 +1,117 @@
 
 <main>
 
-  <!--<aside>-->
-    <!--<div id="myModal2" class="modal2">-->
+  <aside>
+    <div id="myModal2" class="modal2">
 
-      <!--&lt;!&ndash; Modal content &ndash;&gt;-->
-      <!--<div class="modal-content">-->
+       Modal content
+      <div class="modal-content">
 
-        <!--<span class="close2">&times;</span>-->
-        <!--<div class="right">-->
-        <!--<header>-->
-          <!--<h2 style="align-content: center; font-weight: 700">Sign Up</h2>-->
-        <!--</header>-->
+        <span class="close2">&times;</span>
+        <div class="right">
+        <header>
+          <h2 style="align-content: center; font-weight: 700">Sign Up</h2>
+        </header>
 
-        <!--&lt;!&ndash;<p>Some text in the Modal..</p>&ndash;&gt;-->
-        <!--<br><br>-->
-        <!--<div class="form-sign">-->
-        <!--<%= form_for @user, :as => :user, :url => registration_path(@user) do |f| %>-->
+        <p>Some text in the Modal..</p>
+        <br><br>
+        <div class="form-sign">
+        <%= form_for @user, :as => :user, :url => registration_path(@user) do |f| %>
 
 
-            <!--<div class="field">-->
+            <div class="field">
               <%= f.label :UserName %><br />
-              <!--<%= f.text_field :username, autofocus: true %>-->
-            <!--</div>-->
+              <%= f.text_field :username, autofocus: true %>
+            </div>
 
-            <!--<div class="field">-->
+            <div class="field">
               <%= f.label :DateOfBirth %><br />
-              <!--<%= f.date_field :birthday, autofocus: true %>-->
-            <!--</div>-->
+              <%= f.date_field :birthday, autofocus: true %>
+            </div>
 
-            <!--<div class="field">-->
+            <div class="field">
               <%= f.label :email %><br />
-              <!--<%= f.email_field :email, autofocus: true %>-->
-            <!--</div>-->
+              <%= f.email_field :email, autofocus: true %>
+            </div>
 
-            <!--<div class="field">-->
-              <!--<%= f.label :password %>-->
-              <!--<% if @minimum_password_length %>-->
-                  <!--<em>(<%= @minimum_password_length %> characters minimum)</em>-->
+            <div class="field">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
               <% end %><br />
-              <!--<%= f.password_field :password, autocomplete: "off" %>-->
-            <!--</div>-->
+              <%= f.password_field :password, autocomplete: "off" %>
+            </div>
 
-            <!--<div class="field">-->
+            <div class="field">
               <%= f.label :password_confirmation %><br />
-              <!--<%= f.password_field :password_confirmation, autocomplete: "off",:class => "password_field" %>-->
-            <!--</div>-->
-              <!--</div>-->
-            <!--<div class="actions">-->
-              <!--<%= f.submit "Sign up", :class => 'submit' %>-->
-            <!--</div>-->
+              <%= f.password_field :password_confirmation, autocomplete: "off",:class => "password_field" %>
+            </div>
+              </div>
+            <div class="actions">
+              <%= f.submit "Sign up", :class => 'submit' %>
+            </div>
             <%= link_to "Forgot your password?", new_password_path(@user) %><br />
 
 
-      <!--<% end %>-->
-          <!--<br><br>-->
-        <!--<footer><h5>@copyright 2017,-->
-          <!--<a  href="gauravano.github.io">Gaurav Sachdeva</a></h5></footer>-->
-        <!--</div>-->
-      <!--</div>-->
+      <% end %>
+          <br><br>
+        <footer><h5>@copyright 2017,
+          <a  href="gauravano.github.io">Gaurav Sachdeva</a></h5></footer>
+        </div>
+      </div>
 
-    <!--</div>-->
+    </div>
 
-    <!--<div id="myModal1" class="modal1">-->
+    <div id="myModal1" class="modal1">
 
-      <!--&lt;!&ndash; Modal content &ndash;&gt;-->
-      <!--<div class="modal-content">-->
+       Modal content
+      <div class="modal-content">
 
-        <!--<span class="close1">&times;</span>-->
+        <span class="close1">&times;</span>
 
-        <!--&lt;!&ndash;<div class="leftlog">&ndash;&gt;-->
+        <div class="leftlog">
 
-        <!--&lt;!&ndash;&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--<div class="right">-->
-          <!--<header>-->
-            <!--<h2 style="align-content: center; font-weight: 700">Sign In</h2>-->
-          <!--</header>-->
 
-          <!--&lt;!&ndash;<p>Some text in the Modal..</p>&ndash;&gt;-->
-          <!--<br><br>-->
+        </div>
+        <div class="right">
+          <header>
+            <h2 style="align-content: center; font-weight: 700">Sign In</h2>
+          </header>
 
-          <!--<div class="form-sign">-->
+          <p>Some text in the Modal..</p>
+          <br><br>
 
-                <!--<%=  form_for @user, :as => :user, :url => session_path(@user) do |f| %>-->
-                <!--<div class="field">-->
+          <div class="form-sign">
+
+                <%=  form_for @user, :as => :user, :url => session_path(@user) do |f| %>
+                <div class="field">
                   <%= f.label :email %><br />
-                  <!--<%= f.email_field :email, autofocus: true %>-->
-                <!--</div>-->
+                  <%= f.email_field :email, autofocus: true %>
+                </div>
 
-                <!--<div class="field">-->
+                <div class="field">
                   <%= f.label :password %><br />
-                  <!--<%= f.password_field :password, autocomplete: "off" %>-->
-                <!--</div>-->
+                  <%= f.password_field :password, autocomplete: "off" %>
+                </div>
 
 
 
-                <!--<div class="actions">-->
-                  <!--<%= f.submit "Log in" %>-->
-                <!--</div>-->
-            <!--<% end %>-->
+                <div class="actions">
+                  <%= f.submit "Log in" %>
+                </div>
+            <% end %>
 
-            <!--<br><br>-->
+            <br><br>
 
-            <!--<footer><h5>@copyright 2017,-->
-              <!--<a  href="gauravano.github.io">Gaurav Sachdeva</a></h5></footer>-->
-            <!--</div>-->
-      <!--</div>-->
+            <footer><h5>@copyright 2017,
+              <a  href="gauravano.github.io">Gaurav Sachdeva</a></h5></footer>
+            </div>
+      </div>
 
-    <!--</div>-->
-    <!--</div>-->
+    </div>
+    </div>
 
-  <!--</aside>-->
+  </aside>
 
   <section>
 

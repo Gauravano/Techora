@@ -73,155 +73,155 @@ main {
   background-color: #fafafa;
   padding-top: 10px;
 
-  //aside {
-  //  width: 250px;
-  //
-  //  .modal1 {
-  //
-  //    display: none; /* Hidden by default */
-  //    position: fixed; /* Stay in place */
-  //    z-index: 1; /* Sit on top */
-  //    left: 0;
-  //    top: 0;
-  //    width: 100%; /* Full width */
-  //    height: 100%; /* Full height */
-  //    overflow: auto; /* Enable scroll if needed */
-  //    background-color: rgb(0,0,0); /* Fallback color */
-  //    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  //
-  //    /* Modal Content/Box */
-  //    .modal-content {
-  //
-  //      background-image: url("https://static.vecteezy.com/system/resources/previews/000/101/241/non_2x/free-abstract-background-4-vector.jpg");
-  //      background-repeat:no-repeat ;
-  //      background-position:center ;
-  //      margin: 5% auto; /* 15% from the top and centered */
-  //      border: 1px solid #888;
-  //      width: 50%; /* Could be more or less, depending on screen size */
-  //      position: center;
-  //
-  //      /* The Close Button */
-  //      .close1 {
-  //        color: #aaa;
-  //        float: right;
-  //        font-size: 28px;
-  //        font-weight: bold;
-  //      }
-  //
-  //      .close1:hover,
-  //      .close1:focus {
-  //        color: black;
-  //        text-decoration: none;
-  //        cursor: pointer;
-  //      }
-  //
-  //      .right{
-  //        header{
-  //          margin-top: 20px;
-  //          background-color: yellow;
-  //          opacity: 0.5;
-  //          border: none;
-  //          text-align: center;
-  //        }
-  //
-  //        .form-sign{
-  //          margin-left: 30px;
-  //          align-items: center;
-  //          .field{
-  //
-  //          }
-  //          .actions{
-  //
-  //            .submit{
-  //              text-decoration: none;
-  //              align-items: center;
-  //              width: 100%;
-  //              height: 70px;
-  //              font-size: 30px;
-  //
-  //            }
-  //
-  //          }
-  //        }
-  //      }
-  //    }
-  //
-  //  }
-  //
-  //  .modal2 {
-  //
-  //    display: none; /* Hidden by default */
-  //    position: fixed; /* Stay in place */
-  //    z-index: 1; /* Sit on top */
-  //    left: 0;
-  //    top: 0;
-  //    width: 100%; /* Full width */
-  //    height: 100%; /* Full height */
-  //    overflow: auto; /* Enable scroll if needed */
-  //    background-color: rgb(0,0,0); /* Fallback color */
-  //    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  //
-  //    /* Modal Content/Box */
-  //    .modal-content {
-  //
-  //      background-image: url("https://static.vecteezy.com/system/resources/previews/000/101/241/non_2x/free-abstract-background-4-vector.jpg");
-  //      background-repeat:no-repeat ;
-  //      background-position:center ;
-  //      margin: 5% auto; /* 15% from the top and centered */
-  //      border: 1px solid #888;
-  //      width: 50%; /* Could be more or less, depending on screen size */
-  //      position: center;
-  //
-  //      /* The Close Button */
-  //      .close2 {
-  //        color: #aaa;
-  //        float: right;
-  //        font-size: 28px;
-  //        font-weight: bold;
-  //      }
-  //
-  //      .close2:hover,
-  //      .close2:focus {
-  //        color: black;
-  //        text-decoration: none;
-  //        cursor: pointer;
-  //      }
-  //
-  //      .right{
-  //        header{
-  //          margin-top: 20px;
-  //          background-color: yellow;
-  //          opacity: 0.5;
-  //          border: none;
-  //          text-align: center;
-  //        }
-  //
-  //        .form-sign{
-  //          margin-left: 30px;
-  //          align-items: center;
-  //          .field{
-  //
-  //          }
-  //          .actions{
-  //
-  //            .submit{
-  //              text-decoration: none;
-  //              align-items: center;
-  //              width: 100%;
-  //              height: 70px;
-  //              font-size: 30px;
-  //
-  //            }
-  //
-  //          }
-  //        }
-  //      }
-  //    }
-  //
-  //  }
+  aside {
+    width: 250px;
+
+    .modal1 {
+
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+      /* Modal Content/Box */
+      .modal-content {
+
+        background-image: url("https://static.vecteezy.com/system/resources/previews/000/101/241/non_2x/free-abstract-background-4-vector.jpg");
+        background-repeat:no-repeat ;
+        background-position:center ;
+        margin: 5% auto; /* 15% from the top and centered */
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+        position: center;
+
+        /* The Close Button */
+        .close1 {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .close1:hover,
+        .close1:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .right{
+          header{
+            margin-top: 20px;
+            background-color: yellow;
+            opacity: 0.5;
+            border: none;
+            text-align: center;
+          }
+
+          .form-sign{
+            margin-left: 30px;
+            align-items: center;
+            .field{
+
+            }
+            .actions{
+
+              .submit{
+                text-decoration: none;
+                align-items: center;
+                width: 100%;
+                height: 70px;
+                font-size: 30px;
+
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+
+    .modal2 {
+
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+      /* Modal Content/Box */
+      .modal-content {
+
+        background-image: url("https://static.vecteezy.com/system/resources/previews/000/101/241/non_2x/free-abstract-background-4-vector.jpg");
+        background-repeat:no-repeat ;
+        background-position:center ;
+        margin: 5% auto; /* 15% from the top and centered */
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+        position: center;
+
+        /* The Close Button */
+        .close2 {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .close2:hover,
+        .close2:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .right{
+          header{
+            margin-top: 20px;
+            background-color: yellow;
+            opacity: 0.5;
+            border: none;
+            text-align: center;
+          }
+
+          .form-sign{
+            margin-left: 30px;
+            align-items: center;
+            .field{
+
+            }
+            .actions{
+
+              .submit{
+                text-decoration: none;
+                align-items: center;
+                width: 100%;
+                height: 70px;
+                font-size: 30px;
+
+              }
+
+            }
+          }
+        }
+      }
+
+    }
 
 
-  //}
+  }
 
   section {
     flex-grow: 1;
