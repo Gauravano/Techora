@@ -8,6 +8,20 @@
 </head>
 <body>
 
+<% if notice %>
+    <script type="text/javascript">
+        noty({text: '<%= notice %>', type: 'alert'});
+    </script>
+
+<% end %>
+
+<% if alert %>
+
+    <script type="text/javascript">
+        noty({text: '<%= alert %>', type: 'error'});
+    </script>
+<% end %>
+
 <header>
 
   <div class="logo"><a href="/"> <%= image_tag src="logo.png" %></a> </div>

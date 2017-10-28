@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20170912081935) do
     t.string   "profile_picture"
     t.boolean  "anonymous"
     t.date     "birthday"
-    t.integer  "role"
+    t.integer  "role",                    default: 1
     t.string   "access_token"
     t.string   "provider"
     t.string   "uid"
