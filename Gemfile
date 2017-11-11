@@ -8,6 +8,8 @@ gem 'devise'
 gem 'paper_trail'
 # Use sqlite3 as the database for Active Record
 
+gem "serviceworker-rails"
+
 gem 'puma'
 gem 'rails_12factor'
 # Use SCSS for stylesheets

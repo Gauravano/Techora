@@ -30,9 +30,18 @@ $(document).ready(function() {
     };
 
 // When the user clicks anywhere outside of the modal, close it
+   console.log("helllloooo");
     window.onclick = function(event) {
-        if (event.target == modal) {
+        if (event.target === modal1) {
+            console.log("helllloooo");
             modal1.style.display = "none";
+        }
+    };
+
+    window.onclick = function(event) {
+        if (event.target === modal2) {
+            console.log("helllloooo");
+            modal2.style.display = "none";
         }
     };
 
