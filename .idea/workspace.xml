@@ -75,8 +75,8 @@
       <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+            <state relative-caret-position="90">
+              <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -884,7 +884,7 @@
       <workItem from="1510655209596" duration="1522000" />
       <workItem from="1510746871170" duration="6100000" />
       <workItem from="1510811660861" duration="74000" />
-      <workItem from="1510811849045" duration="835000" />
+      <workItem from="1510811849045" duration="1399000" />
     </task>
     <task id="LOCAL-00001" summary="javascript applied to question generator">
       <created>1500402653400</created>
@@ -897,7 +897,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321442000" />
+    <option name="totallyTimeSpent" value="322006000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1332,8 +1332,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+        <state relative-caret-position="90">
+          <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
           <folding />
         </state>
       </provider>
