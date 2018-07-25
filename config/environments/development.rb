@@ -50,6 +50,6 @@ ActionMailer::Base.smtp_settings =
   :domain             => 'gmail.com', #you can also use google.com
   :authentication     => :login,
   :user_name          => 'sachdevarockz@gmail.com',
-  :password           => 'awesome1997'
+  :password           => 'password@sachdevarockz'
 }
 end
